@@ -24,7 +24,7 @@
                 </tr>
             </thead>
             <tbody>
-            <th:block th:each="event:${concierto}">
+                <th:block th:each="event:${concierto}">
                 <tr>
                     <td th:text="${event.getArtista}"></td>
                     <td th:text="${event.getCosto}"></td>
@@ -35,7 +35,9 @@
                         <a th:href="@{/eliminarEvento/{id}(id=${event.getId})}">Eliminar Evento</a>
                     </td>
                 </tr>
-            </th:block>
+                </th:block>
+            </tbody>
+            </table>
         </div>
         <a th:href="@{/nuevoEvento}">Agregar Nuevo Evento</a>
     </body>
