@@ -17,11 +17,11 @@ public class indexController {
     @Autowired
     private ConciertoService conciertoService;
     
-    @GetMapping("/concierto")
+    @GetMapping("/index")
     public String index(Model model){
-        List<Concierto> listarEventos = conciertoService.getAllEvents();
-        model.addAttribute("concierto", listarEventos);
-        return "concierto";
+        List<Concierto> listaConcierto = conciertoService.getAllEvents();
+        model.addAttribute("concierto", listaConcierto);
+        return "/index";
     }
     
     @GetMapping("/nuevoEvento")
@@ -33,7 +33,7 @@ public class indexController {
     @PostMapping("/guardarEvento")
     public String guardarEvento(@ModelAttribute Concierto concierto){
         conciertoService.saveEvent(concierto);
-        return "/redirect:/";
+        return "redirect:/index";
     }
     
     @GetMapping("/eliminarEvento/{id}")
