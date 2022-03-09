@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<html>
+    <head>
+        <title>ITicket</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div>
+            <h1>ITicket</h1>
+            <h2>Agregar Nuevo Evento</h2>
+        </div>
+        <div>
+            <a th:href="@{/}">Regresar</a>
+        </div>
+        <div>
+            <form th:action="@{/guardarEvento}" method="post" th:object="${concierto}">
+                <input type="hidden" name="idConcierto" th:field="*{id}"/>
+                <label for="artista">Artista Invitado: </label>
+                <input type="text" name="artista" th:field="*{artista}"/>
+                <br/>
+                <label for="costo">Costo de la Entrada: </label>
+                <input type="text" name="costo" th:field="*{costo}"/>
+                <br/>
+                <label for="fecha">Fecha del EVento: </label>
+                <input type="text" name="fecha" th:field="*{fecha}"/>
+                <br/>
+                <label for="capacidad">Capacidad del Establecimiento: </label>
+                <input type="text" name="capacidad" th:field="*{capacidad}"/>
+                <br/>
+                <label for="lugar">Lugar del Evento: </label>
+                <input type="text" name="lugar" th:field="*{lugar}"/>
+                <br/>
+                <input type="submit" name="guardar" value="Guardar"/>       
+            </form> 
+        </div>
+    </body>
+</html>
