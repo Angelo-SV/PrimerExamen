@@ -39,6 +39,6 @@ public class indexController {
     @GetMapping("/eliminarEvento/{id}")
     public String eliminarEvento(@PathVariable("id") long idConcierto){
         conciertoService.deleteEvent(idConcierto);
-        return "/";
+        return "/index";
     }
 }
